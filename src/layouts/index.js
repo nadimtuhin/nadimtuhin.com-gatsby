@@ -14,14 +14,16 @@ class Template extends React.Component {
       rootPath = __PATH_PREFIX__ + `/`
     }
 
-    if (location.pathname === rootPath) {
+    if ([rootPath, '/scattered-thoughts'].includes(location.pathname)) {
       header = (
+        <header style={{
+          marginBottom: rhythm(1.5),
+        }}>
         <h1
           style={{
             ...scale(1.5),
-            fontWeight: 600,
-            marginBottom: rhythm(1.5),
             marginTop: 0,
+            fontWeight: 600
           }}
         >
           <Link
@@ -35,6 +37,13 @@ class Template extends React.Component {
             Scattered Thoughts
           </Link>
         </h1>
+
+          <nav>
+            <a> Shattered Thoughts </a> |
+            <a> Book Reviews </a> |
+            <a> Programming </a>
+          </nav>
+        </header>
       )
     } else {
       header = (

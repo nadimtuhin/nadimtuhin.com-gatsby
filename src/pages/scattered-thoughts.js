@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import Bio from '../components/Bio'
 import { rhythm } from '../utils/typography'
 
-class BlogIndex extends React.Component {
+class ScatteredIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
@@ -16,33 +16,33 @@ class BlogIndex extends React.Component {
         <Helmet title={siteTitle} />
         <Bio />
         <ul>
-        {posts.map(post => {
-          if (post.node.frontmatter.path !== '/404/') {
-            const title = get(post, 'node.frontmatter.title') || post.node.path
-            return (
-              <li key={post.node.frontmatter.path} style={{
-                marginBottom: rhythm(1/4)
-              }}>
+          {posts.map(post => {
+            if (post.node.frontmatter.path !== '/404/') {
+              const title = get(post, 'node.frontmatter.title') || post.node.path
+              return (
+                <li key={post.node.frontmatter.path} style={{
+                  marginBottom: rhythm(1/4)
+                }}>
                   <Link
                     style={{ boxShadow: 'none' }}
                     to={post.node.frontmatter.path}
                   >
                     {title}
                   </Link>
-              </li>
-            )
-          }
-        })}
+                </li>
+              )
+            }
+          })}
         </ul>
       </div>
     )
   }
 }
 
-export default BlogIndex
+export default ScatteredIndex
 
 export const pageQuery = graphql`
-  query PostsIndexQuery {
+  query ScatteredIndexQuery {
     site {
       siteMetadata {
         title
