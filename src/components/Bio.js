@@ -4,7 +4,7 @@ import React from 'react'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
-import profilePic from './profile-pic.jpg'
+// import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 
 class Bio extends React.Component {
@@ -18,7 +18,7 @@ class Bio extends React.Component {
       >
         <p>
         <img
-          src={profilePic}
+          src='https://avatars2.githubusercontent.com/u/3125771?s=460&v=4'
           alt={`Nadim Tuhin`}
           style={{
             borderRadius: '50%',
